@@ -3,11 +3,14 @@ import { provideRouter, withViewTransitions } from '@angular/router';
 import { routes } from './app.routes';
 import { lastValueFrom } from 'rxjs/internal/lastValueFrom';
 import { InitService } from '../core/services/init-service';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { errorInterceptor } from '../core/interceptors/error-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes, withViewTransitions()),
+    provideHttpClient(withInterceptors([errorInterceptor])),
     provideAppInitializer(() => {
       const initService = inject(InitService);
 

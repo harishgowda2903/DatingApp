@@ -1,0 +1,8 @@
+<div class="container">
+    <h1>Server Error</h1>
+    <p>{{ error?.message }}</p>
+    <button class="btn btn-info btn-lg" (click)="toggleDetails()">{{ buttonText }}</button>
+    @if(showDetails){
+        <div>{{ error?.details }}</div>
+    }        
+</div>

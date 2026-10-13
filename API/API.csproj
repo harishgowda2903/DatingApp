@@ -16,8 +16,10 @@
 
   <ItemGroup>
     <Folder Include="DTOs\" />
+    <Folder Include="Error\" />
     <Folder Include="Extensions\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Middleware\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
